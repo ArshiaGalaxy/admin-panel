@@ -68,8 +68,8 @@ function Users(){
             </div>
             <div className="mt-4">
                 {
-                    users !== [] ?
-                    <table className="w-full" id="user-list">
+                    users != [] ?
+                    <table className="w-full">
                         <tbody className="w-full space-y-2">
                             {
                             users.map(u => (

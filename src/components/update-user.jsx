@@ -6,10 +6,12 @@ function UpdateUser(){
     const params = useParams();
     const [data, setData] = useState({});
     useEffect(()=>{
-        axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`).then(res=>{
-            setData(res.data);
-        });
-    },[]);
+        if (params.id){
+            axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`).then(res=>{
+                setData(res.data);
+            });
+        }
+    },[params]);
 
     const updateUser=(e)=>{
         e.preventDefault();
@@ -25,7 +27,7 @@ function UpdateUser(){
         Navigate({to: '/'});
     }
     return (
-        <div className="rounded-xl shadow-lg bg-slate-800">
+        <div className="rounded-xl shadow-lg bg-slate-800 max-w-[800px] mx-auto">
             <div className="flex justify-center">
                 <span className="bg-[#011523] size-4 flex">
                     <span className="bg-slate-800 size-4 rounded-tl-xl"/>

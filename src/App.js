@@ -6,6 +6,7 @@ import Posts from './components/posts';
 import Gallery from './components/gallery';
 import UpdateUser from './components/update-user';
 import UpdatePost from './components/update-post';
+import Comments from './components/comments';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
                 <Route path=':id'/>
               </Route>
               <Route path='/update-post/' element={<UpdatePost/>}>
+                <Route path=':id'/>
+              </Route>
+              <Route path='/comments/' element={<Comments/>}>
                 <Route path=':id'/>
               </Route>
               <Route path='posts/' element={<Posts/>}/>
